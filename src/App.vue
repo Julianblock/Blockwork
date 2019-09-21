@@ -1,28 +1,46 @@
-<template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
-</template>
-
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+// import Login from './components/Login/index';
+import Layout from './layout/index.vue'
+
 
 export default {
   name: 'app',
   components: {
-    HelloWorld
+    Layout,
+    // Login,
+  },
+  data () {
+    return {
+      loggedin: false,
+    }
   }
 }
 </script>
 
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<template>
+  <div id="app" class="app">
+    <div v-if='!loggedin' >
+      <div class='login login-background'>
+          <div class='login-background-overlay'>
+              <div class='login-interface'>
+                  <img src='../src/assets/logo.png' />
+                  <input placeholder="Username:" class='login-input' />
+                  <input placeholder="password" class='login-input' type="password" />
+                  <div class='login-submit' v-on:click="loggedin = true">Submit</div>
+              </div>
+          </div>
+      </div>
+    </div>
+    <div v-else-if='loggedin'>
+    <Layout  />
+    <div class='content'>
+      <router-view />
+    </div>
+    </div>
+  </div>
+</template>
+
+
+<style lang="scss">
+  @import './styles/index.scss';
 </style>

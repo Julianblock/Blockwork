@@ -1,0 +1,24 @@
+.home {
+    background: white;
+    -webkit-box-shadow: 0px 0px 15px #fff;
+    box-shadow: 0px 0px 10px #08bf00;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    justify-items: center;
+    flex-flow: column;
+    border-radius: 5px;
+
+    &-half {
+        margin-top: 30px;
+        width: 50%;
+    }
+
+    &-photo {
+        border: solid 1px $font-color;
+        border-radius: 100%;
+        width: 150px;
+    }
+}

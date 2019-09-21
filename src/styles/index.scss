@@ -1,0 +1,18 @@
+@import './varibales.scss';
+@import './components/index.scss';
+@import './layout/index.scss';
+body {
+    margin: 0;
+    font-family: sans-serif;
+    transition: .4s; 
+    color: $font-color;
+}
+.content {
+    margin-left: 250px;
+    padding-left: 5%;
+    padding-right: 5%;
+    justify-content: center;
+    padding-top: 75px;
+    background: $gradient;
+    height: 100vh;
+}
