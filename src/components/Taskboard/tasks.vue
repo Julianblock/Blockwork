@@ -1,11 +1,11 @@
 <template>
-  <div class="row">
+  <div class="taskboard-tasks">
     <div class="col-3">
       <h3>Sprint Backlog</h3>
-      <draggable class="list-group" :list="list1" group="people" @change="log">
+      <draggable class="list-group" :list="SprintBacklog" group="people" @change="log">
         <div
           class="list-group-item"
-          v-for="(element, index) in list1"
+          v-for="(element, index) in SprintBacklog"
           :key="element.name"
         >
           {{ element.name }} {{ index }}
@@ -15,10 +15,62 @@
 
     <div class="col-3">
       <h3>Todo</h3>
-      <draggable class="list-group" :list="list2" group="people" @change="log">
+      <draggable class="list-group" :list="Todo" group="people" @change="log">
         <div
           class="list-group-item"
-          v-for="(element, index) in list2"
+          v-for="(element, index) in Todo"
+          :key="element.name"
+        >
+          {{ element.name }} {{ index }}
+        </div>
+      </draggable>
+    </div>
+    
+    <div class="col-3">
+      <h3>In Progress</h3>
+      <draggable class="list-group" :list="InProgress" group="people" @change="log">
+        <div
+          class="list-group-item"
+          v-for="(element, index) in InProgress"
+          :key="element.name"
+        >
+          {{ element.name }} {{ index }}
+        </div>
+      </draggable>
+    </div>
+    
+    <div class="col-3">
+      <h3>Review</h3>
+      <draggable class="list-group" :list="Review" group="people" @change="log">
+        <div
+          class="list-group-item"
+          v-for="(element, index) in Review"
+          :key="element.name"
+        >
+          {{ element.name }} {{ index }}
+        </div>
+      </draggable>
+    </div>
+    
+    <div class="col-3">
+      <h3>Ready</h3>
+      <draggable class="list-group" :list="Ready" group="people" @change="log">
+        <div
+          class="list-group-item"
+          v-for="(element, index) in Ready"
+          :key="element.name"
+        >
+          {{ element.name }} {{ index }}
+        </div>
+      </draggable>
+    </div>
+
+    <div class="col-3">
+      <h3>Done</h3>
+      <draggable class="list-group" :list="Done" group="people" @change="log">
+        <div
+          class="list-group-item"
+          v-for="(element, index) in Done"
           :key="element.name"
         >
           {{ element.name }} {{ index }}
@@ -42,16 +94,36 @@ export default {
   },
   data() {
     return {
-      list1: [
+      SprintBacklog: [
         { name: "John", id: 1 },
         { name: "Joao", id: 2 },
         { name: "Jean", id: 3 },
         { name: "Gerard", id: 4 }
       ],
-      list2: [
+      Todo: [
         { name: "Juan", id: 5 },
-        { name: "Edgard", id: 6 },
-        { name: "Johnson", id: 7 }
+        { name: "Edd", id: 6 },
+        { name: "Jodsfvsdfhnson", id: 7 }
+      ],
+      InProgress: [
+        { name: "sdfvinJuan", id: 8 },
+        { name: "Edgardsdgbon", id: 9 },
+        { name: "Johnswergwergon", id: 10 }
+      ],
+      Review: [
+        { name: "Jwwwwuan", id: 11 },
+        { name: "Edgarerrrrd", id: 12 },
+        { name: "Johnssdfkbvskjfvhon", id: 13 }
+      ],
+      Ready: [
+        { name: "Ju344an", id: 14 },
+        { name: "Edga33rd", id: 15 },
+        { name: "Johns44on", id: 16 }
+      ],
+      Done: [
+        { name: "Juan", id: 17 },
+        { name: "Edgard", id: 18 },
+        { name: "Johnson", id: 19 }
       ]
     };
   },
@@ -73,3 +145,17 @@ export default {
   }
 };
 </script>
+
+<style scoped>
+.col-3 {
+    box-shadow: 0px 0px 7px #dadada;
+    padding: 5px;
+    border-radius: 8px;
+    width: 24%;
+    display: flex;
+    flex-flow: column;
+}
+.taskboard-tasks {
+    display: flex;
+}
+</style>
