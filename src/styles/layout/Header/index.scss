@@ -9,16 +9,52 @@
     border-bottom: 1px solid $font-color;
     justify-content: flex-end;
     background: white;
+    z-index: 2;
     
+    &-profile-dropdown {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+
+        &-content {
+            top: 62px;
+            width: 145px;
+            position: absolute;
+            background: white;
+            display: flex;
+            flex-flow: column;
+            color: $font-color;
+        }
+         
+        &-item {
+            display: flex;
+            align-items: center;
+            padding-left: 5px;
+            height: 62px;
+            border-bottom: $font-color;
+            transition: .4s;
+        } 
+
+        &-item:hover {
+            background: $gradient;
+            color: white;
+        }
+    }
+
     &-dropdown {
         height: 50px;
         width: 80px;
         background: black;
+        display: flex;
     }
 
     &-section {
         display: flex;
         align-items: center;
+        height: 100%;
+        transition: .4s;
+        flex-flow: column;
     }
 
     &-section:hover {

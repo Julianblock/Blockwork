@@ -4,7 +4,7 @@
               :values="values" :colors="colors" :sub-labels="subLabels" :direction="direction"
               :gradient-direction="gradientDirection"
               :animated="true" :display-percentage="true"
-        >       
+        >   
         </vue-funnel-graph>
     </div>
 </template>
@@ -19,8 +19,8 @@ export default {
   },
   data() {
       return {
-          labels: ['Impressions', 'Resumes sent', 'Interested Recruiters'],
-          subLabels: ['Direct', 'Social Media', 'Ads'],
+          labels: ['Todo', 'In Progress', 'Complete'],
+          subLabels: ['High Priority', 'Medium Priority', 'Low Priority'],
           values: [
           // with the given Labels and SubLabels here's what the values represent:
           // 
@@ -38,8 +38,8 @@ export default {
           ],
           direction: 'horizontal',
           gradientDirection: 'horizontal',
-          height: 300,
-          width: 800
+          height: 150,
+          width: 300
       };
   }
 }
