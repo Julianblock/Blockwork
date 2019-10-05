@@ -77,10 +77,6 @@
         </div>
       </draggable>
     </div>
-
-    <rawDisplayer class="col-3" :value="list1" title="List 1" />
-
-    <rawDisplayer class="col-3" :value="list2" title="List 2" />
   </div>
 </template>
 <script>
@@ -153,9 +149,18 @@ export default {
     border-radius: 8px;
     width: 24%;
     display: flex;
+    align-items: center;
     flex-flow: column;
+    margin-right: 10px;
+    margin-left: 15px;
 }
 .taskboard-tasks {
     display: flex;
+    overflow: scroll;
+    width: 150%;
+    height: 100vh;
+}
+.list-group-item {
+    width: 100%;
 }
 </style>
