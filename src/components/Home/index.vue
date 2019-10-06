@@ -3,7 +3,8 @@
     <div class='home-row'> 
         <div class='home-greeting'>
             <img src='../../assets/profile-pic.jpg' class="home-photo"/>
-            <h1>Welcome back Julian!</h1>
+            <h1>Julian Block</h1>
+            <p>Senior Software Engineer</p>
         </div>
         <div class="home-half">
             <Graph />
