@@ -6,10 +6,9 @@
             <button>Post</button>
         </div>
         <h1>Post Preview: </h1>
-        <div class="home-news-preview" v-bind:style="{ 'background-image': 'url(' + imageData + ')' }" >
+        <div class="home-news-preview" :style="{ 'background-image': 'url(' + imageData + ')' }" >
             <p> {{ posting }} </p>
         </div>
-        <p> {{ posting }} </p>
     </div>
 </template>
 
@@ -17,6 +16,7 @@
 export default {
     data () { 
         return {
+            posting: "",
             imageData: ""  // we will store base64 format of image in this string
         }
     },
