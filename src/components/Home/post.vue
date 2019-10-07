@@ -1,13 +1,18 @@
 <template>
     <div class="row">
         <div class="home-post">
-            <input class="home-post-input" placeholder="Post something: " v-model="posting" type="text" />
+            <input class="home-post-input" placeholder="Post Title " v-model="title" type="text" />
+            <input class="home-post-input" placeholder="Post Content: " v-model="posting" type="text" />
             <input type="file" @change="previewImage" accept="image/*" />
             <button>Post</button>
         </div>
         <h1>Post Preview: </h1>
         <div class="home-news-preview" :style="{ 'background-image': 'url(' + imageData + ')' }" >
-            <p> {{ posting }} </p>
+            <div class="home-news-preview-overlay">
+                <h1> {{ title }} </h1>
+                <p> {{ posting }} </p>
+                <p class="home-news-preview-signutare">Julian Block - 10/6/2019</p>
+            </div>
         </div>
     </div>
 </template>
@@ -17,6 +22,7 @@ export default {
     data () { 
         return {
             posting: "",
+            title: "",
             imageData: ""  // we will store base64 format of image in this string
         }
     },
@@ -43,6 +49,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+input[type="file"] {
+    width: 40%;
+}
+
 .row {
     display: flex;
     flex-flow: column;
@@ -50,15 +60,33 @@ export default {
 }
 .home-news-preview {
     width: 100%;
-    box-shadow: 0px 0px 15px grey;
+    box-shadow: 0px 0px 8px #d7d7d7;
     height: 400px;
     background-size: cover;
-    padding: 18px;
+    border-radius: 5px;
+
+    &-overlay {
+        height: -webkit-fill-available;
+        width: initial;
+        background: linear-gradient(45deg, rgba(0, 0, 0, 0.6), rgba(255, 255, 255, 0.5));
+        padding: 18px;
+        border-radius: 5px
+    }
+
+    &-signutare {
+        display: flex;
+        justify-content: flex-end;
+        bottom: 0;
+    }
 
     p {
         color: #fff;
         text-shadow: 0px 0px 7px #000;
         font-size: 18px;
+    }
+    h1 {
+        color: #fff;
+        text-shadow: 0px 0px 7px #000;
     }
 }
 </style>
