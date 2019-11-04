@@ -16,3 +16,29 @@ body {
     background: white;
     height: 100vh;
 }
+
+.sign-up {
+    text-decoration: none;
+    color: $font-color;
+    font-weight: 800;
+    margin: 20px;
+    &:hover {
+        text-decoration: underline;
+        cursor: pointer
+    }
+}
+
+.sign-up-back-button {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    text-decoration: none;
+    color: $font-color;
+    font-weight: 800;
+    margin: 20px;
+    &:hover {
+        text-decoration: underline;
+        cursor: pointer
+    }
+}
